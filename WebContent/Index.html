@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body ng-app="MyApp">
+    <div ng-controller="MyCtrl">
+
+      <table >
+      <tr>
+      <td>
+      <form class="form-inline">
+        <input ng-model="query" type="text" placeholder="SEARCH (Client Name/Policy Numer)" autofocus>
+      </form>
+      </td>
+      <tr>
+      <td>
+      <ul ng-repeat="friend in friends | filter: query | orderBy: 'name' ">
+      <li>  <b>{{friend.name}}</b><br>
+        {{friend.phone}} {{friend.email}}  {{friend.policyno}}</li>
+      </ul>
+      </td>
+      </tr>
+      </table>
+    </div>
+
+  </body>
+</html>
